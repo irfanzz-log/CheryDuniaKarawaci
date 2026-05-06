@@ -14,19 +14,28 @@ export default function () {
     }
 
     const heroImage = [
-        { name: "car1", src: "/car1.jpg" },
-        { name: "car2", src: "/car2.jpg" },
-        { name: "car3", src: "/car3.jpg" }
+        { name: "car1", content:"Tiggo 8 CSH", subhead: "One Step Ahead", src: "/car3.png" },
+        { name: "car2", content:"Omoda C5", subhead: "Cross F-Future", src: "/car.jpg" },
+        { name: "car3", content:"Chery J6 T", subhead: "Estetika Modern yang Sporty", src: "/car1.png" }
     ]
 
     return (
         <>
-            <section className="relative overflow-x-hidden">
+            <section className="relative overflow-x-hidden mt-20">
                 <div className="w-full">
-                    <div className="h-100">
+                    <div className="relative md:aspect-[21/9] aspect-[4/5]">
                         {heroImage.map((data, idx) => {
+                            const isActive = heroPage === idx
                             return (
-                                <Image key={idx} className={`object-cover bg-center ${heroPage === idx ? "opacity-100" : "opacity-0"} transition-all duration-1000 ease-out`} src={data.src} alt={data.name} fill ></Image>
+                                <div key={idx}>
+                                <Image className={`object-cover bg-center ${isActive ? "opacity-100" : "opacity-0"} transition-all duration-1000 ease-out`} src={data.src} alt={data.name} fill ></Image>
+                                
+                                <div className={`${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} absolute w-full h-full z-2 flex flex-col justify-center transition-all duration-500 ease-out items-center font-teko text-white `}>
+                                    <p className="md:text-6xl text-3xl font-bold">{data.content}</p>
+                                    <p>{data.subhead}</p>
+                                    <button className="my-5 border-1 border-white p-3 text-2xl text-black bg-white shadow-md">Read More</button>
+                                </div>
+                                </div>
                             )
                         })}
                     </div>
