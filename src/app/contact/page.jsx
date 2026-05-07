@@ -7,7 +7,7 @@ import CallToActionBtn from "@/component/CallToActionBtn"
 export default function kontak() {
     
     return (
-        <main className="relative">
+        <main key="Contact" className="relative">
             <Nav></Nav>
 
             <section className="relative w-full shadow-md">

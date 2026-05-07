@@ -7,7 +7,7 @@ export default function CallToActionBtn() {
                 return (
                     <a 
                         key={idx} 
-                        href={`https://api.whatsapp.com/send/?phone=${data.whatsapp}&text=Hello%2C+Kak+${data.name}.+saya+pengunjung+chery.duniakarawaciofficial.id+ingin+membeli+mobil+Chery.+Saya+...+dari+...`}
+                        href={`https://api.whatsapp.com/send/?phone=${data.noTelp}&text=Hello%2C+Kak+${data.name}.+saya+pengunjung+chery.duniakarawaciofficial.id+ingin+membeli+mobil+Chery.+Saya+...+dari+...`}
                         className="w-full p-1 flex flex-col items-center justify-center"
                         >
                         <div>
