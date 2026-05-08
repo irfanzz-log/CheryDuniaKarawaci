@@ -7,9 +7,10 @@ import sales from "@/lib/datasales";
 import TopCars from "@/component/TopCars";
 import Footer from "@/component/Footer";
 import Team from "@/component/Team";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CallToActionBtn from "@/component/CallToActionBtn";
 import { usePathname } from "next/navigation";
+import useSendMail from "@/hook/useSendMail";
 
 export default function Home() {
   const path = usePathname();
@@ -21,6 +22,50 @@ export default function Home() {
     { title: "Spare Parts", desc: "Dukungan suku cadang asli yang teruji dan berkualitas tinggi." },
     { title: "Trade-In", desc: "Solusi tukar tambah mobil lama Anda dengan harga terbaik." },
   ];
+
+  const [formMail, setFormMail] = useState({
+    nama: '',
+    email: '',
+    typeMobil: '',
+    tanggal: '',
+    jam: '',
+    noWa: ''
+  });
+
+  const inputFormEmail = (e) => {
+    const { name, value } = e.target
+    setFormMail((prev) => ({ ...prev, [name]: value }));
+    console.log({ ...formMail, [name]: value });
+
+  }
+  const [isBlankFormLoading, setIsBlankLoading] = useState(false);
+  const { sendEmail } = useSendMail();
+  const [isCompleteForm, setIsCompleteForm] = useState(false);
+
+  function handleSendEmailButton() {
+
+    if (formMail.email === "" || formMail.nama === "" || formMail.noWa === "" || formMail.tanggal === "") {
+      setIsCompleteForm(true);
+      return;
+    }
+    setIsBlankLoading(true);
+    setIsCompleteForm(false);
+    send();
+
+  }
+
+  async function send() {
+    try {
+      await sendEmail(formMail);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setTimeout(() => {
+        setIsBlankLoading(false)
+      }, 2000)
+    }
+  }
+
 
   useEffect(() => {
     const observerOptions = {
@@ -43,10 +88,9 @@ export default function Home() {
     return () => observer.disconnect();
   }, [services, sales, path]);
 
-
   return (
     <>
-      <main key="Home">
+      <main key="Home" className="relative">
         <Nav></Nav>
         <Hero></Hero>
 
@@ -122,26 +166,33 @@ export default function Home() {
           <div className="flex md:flex-row flex-col w-full">
             <div className="md:w-1/2 w-full p-5">
               <h2 className="text-center font-teko text-3xl font-bold my-2">Test Drive Now</h2>
-              <form action="" className="text-sm text-gray-600">
+              <form action={handleSendEmailButton} className="text-sm text-gray-600">
                 <div className="w-full">
                   <label htmlFor="">Nama </label>
-                  <input className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="Ketik nama Anda" type="text" />
+                  <input onChange={inputFormEmail} name="nama" className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="Ketik nama Anda" type="text" />
                 </div>
                 <div className="w-full">
                   <label htmlFor="">No Whatsapp </label>
-                  <input className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="08xx" type="text" />
+                  <input onChange={inputFormEmail} name="noWa" className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="08xx" type="text" />
+                </div>
+                <div className="w-full">
+                  <label htmlFor="">Email </label>
+                  <input onChange={inputFormEmail} name="email" className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="example@gmail.com" type="email" />
                 </div>
                 <div className="w-full">
                   <label htmlFor="">Tipe Mobil </label>
-                  <input className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="" type="text" />
+                  <input onChange={inputFormEmail} name="typeMobil" className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="Ketik tipe mobil" type="text" />
                 </div>
                 <div className="w-full">
                   <label htmlFor="">Tanggal Test Drive </label>
-                  <input className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="" type="text" />
+                  <input onChange={inputFormEmail} name="tanggal" className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="" type="date" />
                 </div>
                 <div className="w-full">
                   <label htmlFor="">Jam Test Drive </label>
-                  <input className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="" type="text" />
+                  <input onChange={inputFormEmail} name="jam" className="w-full bg-white p-4 border-[0.5px] border-gray-500/10 rounded-md" placeholder="" type="time" />
+                </div>
+                <div>
+                  {isCompleteForm && <p className="text-red-600">Harap Lengkapi Form Diatas!</p>}
                 </div>
                 <button className="p-4 bg-red-700 hover:bg-red-800 cursor-pointer text-white mt-4">Kirim Permohonan</button>
               </form>
@@ -200,6 +251,16 @@ export default function Home() {
         </section>
 
         <Footer></Footer>
+
+        <div className={`popup fixed bottom-10 left-10  md:w-1/3 w-full z-10 justify-center items-center transition-all duration-1000 ease-out ${isBlankFormLoading ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-80"}`}>
+          <div className="bg-white p-2 shadow-md flex justify-center items-center rounded-lg text-green-600 border-1 border-green-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentcolor" className="bi bi-check-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+              <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+            </svg>
+            <p className="mx-5 text-sm">Permohonan telah dikirim</p>
+          </div>
+        </div>
 
         <CallToActionBtn></CallToActionBtn>
       </main>
