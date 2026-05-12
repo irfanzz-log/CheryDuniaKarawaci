@@ -2,7 +2,7 @@ import sales from "@/lib/datasales"
 
 export default function CallToActionBtn() {
     return (
-        <div className="md:hidden fixed text-white bottom-0 left-0 p-1 bg-gray-800 w-full flex justify-center ">
+        <div className="md:hidden fixed text-white bottom-0 left-0 p-1 bg-gray-800 w-full overflow-x-hidden flex justify-center ">
             {sales.map((data, idx) => {
                 return (
                     <a 

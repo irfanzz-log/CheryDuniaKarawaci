@@ -90,7 +90,7 @@ export default function Home() {
 
   return (
     <>
-      <main key="Home" className="relative">
+      <main key="Home" className="relative overflow-x-hidden">
         <Nav></Nav>
         <Hero></Hero>
 
