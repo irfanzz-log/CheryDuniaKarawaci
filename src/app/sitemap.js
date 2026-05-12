@@ -12,6 +12,10 @@ export default async function sitemap() {
       url: 'https://cheryduniakarawaciofficial.com/',
       lastModified: new Date(),
     },
+    {
+      url: 'https://cheryduniakarawaciofficial.com/contact',
+      lastModified: new Date(),
+    },
 
     ...carUrls,
   ]
