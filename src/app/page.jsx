@@ -107,7 +107,7 @@ export default function Home() {
               </div>
               <div className="my-2 md:p-6 p-4 md:w-1/2 md:text-left text-center">
                 <p className="font-bold text-white text-2xl font-teko">Chery Dunia Karawaci</p>
-                <p className="mt-4 text-white">Selamat datang di Website Dealer Resmi Chery Karawaci Official. Perkenalkan Kami Team Digital Marketing Chery Cibubur Official. Dengan pengalaman lebih dari 5 tahun di bidang Otomotif dan Pemasaran, khususnya dalam pelayanan jual beli mobil.
+                <p className="mt-4 text-white">Selamat datang di Website Dealer Resmi Chery Karawaci Official. Perkenalkan Kami Team Digital Marketing Chery Dunia Karawaci Official. Dengan pengalaman lebih dari 5 tahun di bidang Otomotif dan Pemasaran, khususnya dalam pelayanan jual beli mobil.
                 </p>
                 <p className="mt-4 text-white">Kami akan memberikan Excellent Service sesuai dengan kebutuhan Anda dalam memiliki mobil Chery.
                   Silahkan bertanya lebih lanjut tentang produk mobil Chery dengan menghubungi Kami.</p>

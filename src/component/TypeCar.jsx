@@ -37,7 +37,7 @@ export default function TypeCar() {
         <>
             <main key="Car-type">
                 <Nav></Nav>
-                <section className="relative w-full mt-0 my-10">
+                <section className="relative w-full md:mt-0 mt-30 my-10">
                     {pathCarContent.map((category, idx) => {
                         if (path === category.path) {
                             return (

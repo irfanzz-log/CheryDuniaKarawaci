@@ -23,9 +23,9 @@ export default function () {
     return (
         <>
             <header className="fixed w-full z-100">
-                <nav className="relative flex justify-between h-20 items-center bg-white shadow-md p-5 md:px-50">
-                    <div className="logo">
-                        <Image className="" alt="" src="/chery-logo.png" width={80} height={80}></Image>
+                <nav className="relative flex justify-between h-15 items-center bg-white shadow-md p-5 md:px-50">
+                    <div className="logo p-2">
+                        <Image className="" alt="" src="/chery-logo.png" width={50} height={50}></Image>
                     </div>
                     <div className="w-full md:flex justify-end hidden">
                         {path.map((data, idx) => {
@@ -75,7 +75,7 @@ export default function () {
                         })}
                     </div>
                     <div className="md:hidden">
-                        <button onClick={() => setIsNavClick(!isNavClick)}><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
+                        <button onClick={() => setIsNavClick(!isNavClick)}><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                         </svg></button>
                     </div>
