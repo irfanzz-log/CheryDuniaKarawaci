@@ -31,7 +31,6 @@ export default function kontak() {
 
             <Team></Team>
             <Footer></Footer>
-            <CallToActionBtn></CallToActionBtn>
         </main>
     )
 }

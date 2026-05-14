@@ -262,7 +262,6 @@ export default function Home() {
           </div>
         </div>
 
-        <CallToActionBtn></CallToActionBtn>
       </main>
     </>
   );

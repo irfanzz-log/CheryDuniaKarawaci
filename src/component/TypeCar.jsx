@@ -88,7 +88,6 @@ export default function TypeCar() {
                 </section>
 
                 <Footer></Footer>
-                <CallToActionBtn></CallToActionBtn>
             </main>
         </>
     )

@@ -79,7 +79,7 @@ export default function () {
                             <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                         </svg></button>
                     </div>
-                    <div className={`absolute flex flex-col w-full top-20 bg-white shadow-md left-0 p-5 md:hidden block transition-all duration-200 ease-out -z-1 ${isNavClick ? 'translate-y-0' : '-translate-y-1000'}`}>
+                    <div className={`absolute flex flex-col w-full top-12 bg-white shadow-md left-0 p-5 md:hidden block transition-all duration-200 ease-out -z-1 ${isNavClick ? 'translate-y-0' : '-translate-y-1000'}`}>
                         {path.map((data, idx) => {
 
                             if (data.name === "Tipe Mobil") {
