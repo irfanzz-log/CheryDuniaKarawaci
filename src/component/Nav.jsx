@@ -22,7 +22,7 @@ export default function () {
 
     return (
         <>
-            <header className="fixed w-full z-100">
+            <header className="fixed top-0 w-full z-100">
                 <nav className="relative flex justify-between h-15 items-center bg-white shadow-md p-5 md:px-50">
                     <div className="logo p-2">
                         <Image className="" alt="" src="/chery-logo.png" width={50} height={50}></Image>
