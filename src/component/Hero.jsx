@@ -33,7 +33,7 @@ export default function () {
                                 <div className={`${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} absolute w-full h-full z-2 flex flex-col justify-center transition-all duration-500 ease-out items-center font-teko text-white `}>
                                     <p className="md:text-8xl text-5xl font-bold">{data.content}</p>
                                     <p>{data.subhead}</p>
-                                    <button className="my-5 border-1 border-white p-3 text-2xl text-black bg-white/10 rounded-md text-white backdrop-blur-xs shadow-md">Read More</button>
+                                    <button className="my-5 border-1 border-white p-3 text-2xl text-black bg-white/10 rounded-md text-white shadow-md">Read More</button>
                                 </div>
                                 </div>
                             )
