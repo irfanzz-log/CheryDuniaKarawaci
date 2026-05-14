@@ -21,7 +21,7 @@ export default function () {
 
     return (
         <>
-            <section className="relative overflow-x-hidden mt-20">
+            <section className="relative overflow-hidden">
                 <div className="w-full">
                     <div className="relative md:aspect-[21/9] aspect-[4/5]">
                         {heroImage.map((data, idx) => {

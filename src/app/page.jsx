@@ -95,7 +95,7 @@ export default function Home() {
         <Hero></Hero>
 
         <section className="overflow-x-hidden reveal opacity-0 translate-y-30 transition-all duration-1000 ease-out">
-          <div className="relative mt-10 w-full">
+          <div className="relative mt-20 w-full">
             <div className="w-100 md:h-170 h-200">
               <Image src="/element/element1.svg" className="object-cover bg-center" alt="" fill></Image>
             </div>
