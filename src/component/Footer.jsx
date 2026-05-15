@@ -28,7 +28,7 @@ export default function Footer() {
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold">Email</h3>
-                                    <p>Syah90009@gmail.com</p>
+                                    <p>cikeydigital@gmail.com</p>
                                 </div>
                             </address>
                         </div>

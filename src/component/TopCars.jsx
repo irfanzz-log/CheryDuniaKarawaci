@@ -37,7 +37,7 @@ export default function TopCars() {
                     <div className="flex md:flex-row flex-col p-5">
                         {topCars.map((data, idx) => {
                             return (
-                                <div key={idx} className="reveal opacity-0 translate-y-30 transition-all duration-1000 ease-out">
+                                <div key={idx} className="reveal hover:scale-110 opacity-0 translate-y-30 transition-all duration-1000 ease-out">
                                     <div className="w-full">
                                         <Image src={data.img} className="object-cover" alt="" width={500} height={500}></Image>
                                     </div>
