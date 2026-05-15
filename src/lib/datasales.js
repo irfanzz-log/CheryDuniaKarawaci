@@ -5,7 +5,7 @@ const sales = [
         content: "Fokus saya adalah membantu Anda menemukan unit Chery terbaik dengan skema pembiayaan yang paling efisien. Pelayanan personal dan detail menjadi kunci saya dalam memastikan setiap transaksi berjalan mudah, cepat, dan menguntungkan bagi Anda.",
         whatsapp: "/",
         img:"/sales/amel.jpeg",
-        noTelp: "085788513910"
+        noTelp: "62895392790340"
     },
     {
         name: "Galuh", 
