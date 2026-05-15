@@ -16,7 +16,7 @@ export default function kontak() {
                     <div className="md:w-3/4 w-full md:px-40">
                         <div className="bg-gradient-to-b from-gray-300/70 pt-50 p-5 to-transparent">
                             <h1 className="text-5xl font-bold font-teko">Kontak Chery Dunia Karawaci</h1>
-                            <p className="my-2 text-lg">Hi, perkenalkan Kami Team Digital Marketing Dealer Resmi Chery Cibubur Official. Dengan pengalaman di dunia Automotive dan Pemasaran, khususnya dalam memberikan pelayanan jual beli mobil.</p>
+                            <p className="my-2 text-lg">Hi, perkenalkan Kami Team Digital Marketing Dealer Resmi Chery Karawaci Official. Dengan pengalaman di dunia Automotive dan Pemasaran, khususnya dalam memberikan pelayanan jual beli mobil.</p>
                             <p className="my-2 text-lg">Kami akan memberikan Excellent Service sesuai dengan kebutuhan Anda dalam memiliki mobil Chery.</p>
                             <p className="my-2 text-lg">Silahkan bertanya lebih lanjut tentang produk mobil Chery dengan menghubungi kontak Kami dibawah ini.</p>
                         </div>
